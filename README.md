@@ -27,3 +27,15 @@
 * Free
 
 ---------------------------------------
+
+### Setup
+
+Windows
+```
+python tool.py
+```
+
+Linux
+```
+python3 tool.py
+```
