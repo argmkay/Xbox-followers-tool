@@ -8,7 +8,7 @@ from time import sleep
 from sys import platform
 from os import system, _exit
 
-os.system("cls & title xbox followers tool made by mkay")
+os.system("cls & title xbox-followers-tool")
 
 class Follow_Bot:
     def __init__(self):
