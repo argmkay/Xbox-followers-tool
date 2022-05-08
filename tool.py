@@ -28,7 +28,7 @@ class Follow_Bot:
             else:
                 self.failed += 1             
 
-            print(f"[{Fore.GREEN}SUCCESS{Fore.RESET}] GAMERTAG: [{self.target}] | FOLLOWED: [{self.followed}] | ERRORS: [{self.failed}]", end='\r', flush=True)
+            print(f"[{Fore.GREEN}${Fore.RESET}] GAMERTAG: [{self.target}] | FOLLOWED: [{self.followed}] | ERRORS: [{self.failed}]", end='\r', flush=True)
         await session.close()   
  
 
@@ -39,22 +39,22 @@ class Follow_Bot:
 
     
     async def initialise(self) -> None:
-        os.system("cls & title xbox followers tool made by mkay")
+        os.system("cls & title Xbox-followers-tool")
 
         if len(open('tokens.txt', 'r').readlines()) > 0:
-            print(f"[{Fore.GREEN}SUCCESS{Fore.RESET}] You successfully loaded your tokens, NO TOKENS: [{len(open('tokens.txt', 'r').readlines())}] \n")
+            print(f"[{Fore.GREEN}${Fore.RESET}] You successfully loaded your tokens, NO TOKENS: [{len(open('tokens.txt', 'r').readlines())}] \n")
         else:
-            print(f'[{Fore.RED}ERROR{Fore.RESET}] Please make sure you have placed your tokens in the tokens.txt file.');_exit(0)
+            print(f'[{Fore.RED}x{Fore.RESET}] Please make sure you have placed your tokens in the tokens.txt file.');_exit(0)
 
-        self.target = input(f"[{Fore.YELLOW}INPUT{Fore.RESET}] GAMERTAG: ");print('')
+        self.target = input(f"[{Fore.YELLOW}>{Fore.RESET}] GAMERTAG: ");print('')
         time.sleep(3)
-        os.system("cls & title xbox followers tool made by mkay")
+        os.system("cls & title Xbox-followers-tool")
         await self.start()
 
 
     async def start(self):
         await asyncio.gather(*[self.follow_target(user) for user in self.users])
-        print(f"[{Fore.GREEN}SUCCESS{Fore.RESET}] GAMERTAG: [{self.target}] | FOLLOWED: [{self.followed}] | ERRORS: [{self.failed}]", flush=True)
+        print(f"[{Fore.GREEN}${Fore.RESET}] GAMERTAG: [{self.target}] | FOLLOWED: [{self.followed}] | ERRORS: [{self.failed}]", flush=True)
 
 
 if __name__ == "__main__":
